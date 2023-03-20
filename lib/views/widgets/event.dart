@@ -8,7 +8,7 @@ class Event extends StatelessWidget {
 
   // const Event(Place event, {super.key, required this.place});
 
-  const Event(this.place);
+  const Event(this.place, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +30,11 @@ class Event extends StatelessWidget {
             place.event,
             style: textStyle3.copyWith(fontWeight: FontWeight.bold),
           ),
-
-          //
           Text(
             place.city,
             style: textStyle3.copyWith(fontWeight: FontWeight.bold),
           ),
-
           const SizedBox(height: 10),
-
           Row(
             children: [
               const Image(

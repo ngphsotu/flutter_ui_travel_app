@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -16,9 +17,9 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-        Align(
+        const Align(
           alignment: Alignment.bottomCenter,
-          // child: CustomNavbar(),
+          child: CustomNavBar(),
         ),
       ],
     );

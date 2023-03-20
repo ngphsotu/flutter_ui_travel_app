@@ -44,7 +44,7 @@ class PlaceCard extends StatelessWidget {
                             color: mainColor,
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(20),
-                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
                             )),
                         child: Center(
                           child: Image.asset('assets/start.png'),
@@ -55,8 +55,8 @@ class PlaceCard extends StatelessWidget {
             ],
           ),
           Container(
-            width: 150,
-            height: 50,
+            width: 120,
+            height: 30,
             decoration: BoxDecoration(
               color: mainColor,
               borderRadius: const BorderRadius.only(

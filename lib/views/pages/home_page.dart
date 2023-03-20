@@ -1,8 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 import '/theme.dart';
 import '/models/place.dart';
-import '/views/widgets/event.dart';
+import '../widgets/event.dart';
 import '../widgets/place_card.dart';
 
 class HomePage extends StatelessWidget {
@@ -82,10 +84,15 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 30),
                   child: Column(
                     children: [
-                      Text(
-                        titles[index],
-                        style: textStyle4.copyWith(
-                          color: (index == 0) ? mainColor : white,
+                      GestureDetector(
+                        onTap: () {
+                          print('Tap list country');
+                        },
+                        child: Text(
+                          titles[index],
+                          style: textStyle4.copyWith(
+                            color: (index == 0) ? mainColor : white,
+                          ),
                         ),
                       ),
                       (index == 0)
@@ -114,7 +121,12 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Popular Countries', style: textStyle2),
-                Text('See All', style: textStyle4),
+                GestureDetector(
+                  onTap: () {
+                    print('Tap See All Popular');
+                  },
+                  child: Text('See All', style: textStyle4),
+                ),
               ],
             ),
           ),
@@ -124,6 +136,8 @@ class HomePage extends StatelessWidget {
             height: 200,
             margin: const EdgeInsets.only(left: 30, top: 20),
             child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: places.length,
               itemBuilder: (_, index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 20),
@@ -143,9 +157,14 @@ class HomePage extends StatelessWidget {
                   'Ongoing Events',
                   style: textStyle2,
                 ),
-                Text(
-                  'See All',
-                  style: textStyle4,
+                GestureDetector(
+                  onTap: () {
+                    print('Tap See All Ongoing Events');
+                  },
+                  child: Text(
+                    'See All',
+                    style: textStyle4,
+                  ),
                 ),
               ],
             ),
@@ -157,8 +176,8 @@ class HomePage extends StatelessWidget {
             height: 210,
             margin: const EdgeInsets.only(top: 40, right: 30, left: 30),
             child: ListView.builder(
-              itemCount: events.length,
               scrollDirection: Axis.horizontal,
+              itemCount: events.length,
               itemBuilder: (_, index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 20),
